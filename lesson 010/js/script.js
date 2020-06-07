@@ -39,10 +39,35 @@ let str = "дом";
 console.log(str.length);
 console.log(str.toUpperCase()); 
 
-//методы 
+//методы - это служебные функции, часто уже встроенные в JS
 let y = "12.2px";
 console.log(Math.round(y));//методы для типа данных число
 console.log(parseInt(y));
 console.log(parseFloat(y));
 
 console.log('приветп'.codePointAt(6));
+
+//callback-функции
+function first () {
+    console.log(1);
+}
+
+function second () {
+    console.log(2);
+}
+
+first ();
+second ();
+
+//callback-функция, т.к. в ее аргументе есть функция
+function learnJS (lang, callback) {
+    console.log('Я учу ' + lang);
+    callback();//выполенится ТОЛЬКО после выполнения первой функции, в этом ее суть
+
+}
+
+function done () {
+    console.log('Я учу 11 урок');
+}
+
+learnJS ('JS', done);
